@@ -3,6 +3,7 @@ def optionA():
     # Finds out the users' prefered reading time.
     time = input("How many days do you have to finish the reading? ")
     timeRequest = input("How many days a week do you wish to read? ")
+    # Calls the function Reading and sets the two return values to minutes and hours.
     minutes, hours = reading()
     print()
     #Converts time value into weeks value
@@ -41,8 +42,8 @@ def reading():
     #The script calculates it here.
     aprox = (int(pages)*int(wordsPpage))/int(readSpeed)
     #Line below gets the remaining minutes, the one below that subtracts it from total to get the total hours in minutes and then converts into hours.
-    minutes = aprox%60
-    hours = (aprox - minutes)/60
+    minutes = int(aprox%60)
+    hours = int((aprox - minutes)/60)
     return minutes, hours
 
 
